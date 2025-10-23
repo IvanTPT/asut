@@ -1,0 +1,22 @@
+---
+- name: Test Windows Playbook
+  hosts: windows_servers
+  gather_facts: yes
+  tasks:
+    - name: Run a simple command
+      ansible.windows.win_command: ipconfig /all
+      register: ipconfig_output
+
+    - name: Debug ipconfig output
+      ansible.builtin.debug:
+        var: ipconfig_output.stdout_lines
+
+    - name: Create a test file
+      ansible.windows.win_file:
+        path: C:\temp\test_ansible.txt
+        state: touch
+
+    - name: Ensure a service is running
+      ansible.windows.win_service:
+        name: Spooler
+        state: started
