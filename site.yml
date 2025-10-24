@@ -1,6 +1,6 @@
 ---
 - name: Test Windows Playbook
-  hosts: windows_servers
+  hosts: windows
   gather_facts: yes
   tasks:
     - name: Run a simple command
