@@ -20,3 +20,11 @@
       ansible.windows.win_service:
         name: Spooler
         state: started
+
+    - name: Create a simple text file
+      copy:
+        dest: C:\Software\hello.txt
+        content: |
+          Hello from Ansible!
+          This file was created using the Ansible copy module.
+          Current date: {{ ansible_date_time.date }}
