@@ -13,7 +13,7 @@
 
     - name: Create a test file
       ansible.windows.win_file:
-        path: C:\temp\test_ansible.txt
+        path: C:\Software\test_ansible.txt
         state: touch
 
     - name: Ensure a service is running
