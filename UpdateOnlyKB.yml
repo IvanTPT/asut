@@ -1,7 +1,10 @@
-- name: Install only particular updates based on the KB numbers
-  ansible.windows.win_updates:
-    category_names:
-      - Definition Updates
-    accept_list:
-      - KB2267602
-    log_path: C:\software\update_install.log  # Log install process
+- name: Install only particular updates
+  hosts: windows
+  tasks:
+    - name: Install only particular updates based on the KB numbers
+      ansible.windows.win_updates:
+        category_names:
+          - Definition Updates
+        accept_list:
+          - KB2267602
+        log_path: C:\software\update_install.log  # Log install process
