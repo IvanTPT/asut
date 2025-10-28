@@ -1,0 +1,7 @@
+- name: Search for available updates
+  hosts: windows
+  tasks:
+    - name: Search for updates
+      ansible.windows.win_updates:
+        state: searched     # Only search, don't install
+        log_path: C:\software\update_search.log  # Log search results
