@@ -27,4 +27,4 @@
         content: |
           Hello from Ansible!
           This file was created using the Ansible copy module.
-          Current date: {{ ansible_date_time.date }}
+          Current date: {{ ansible_date_time.date }} and time is {{ ansible_date_time.time }}
