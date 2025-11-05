@@ -1,5 +1,5 @@
 - name: Get logged-in users on Windows
-  hosts: your_windows_hosts
+  hosts: windows
   gather_facts: false # No need for facts in this specific task
 
   tasks:
