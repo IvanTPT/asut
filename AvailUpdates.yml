@@ -4,4 +4,4 @@
     - name: Search for updates
       ansible.windows.win_updates:
         state: searched     # Only search, don't install
-        log_path: C:\software\update_search.log  # Log search results
+        log_path: C:\software\{{ ansible_date_time.month }}_{{ ansible_date_time.year }}_update_search.log  # Log search results
