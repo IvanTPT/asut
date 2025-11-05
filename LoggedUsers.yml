@@ -1,0 +1,12 @@
+- name: Get logged-in users on Windows
+  hosts: your_windows_hosts
+  gather_facts: false # No need for facts in this specific task
+
+  tasks:
+    - name: Execute query user command
+      ansible.windows.win_shell: query user
+      register: logged_in_users_output
+
+    - name: Display logged-in users
+      ansible.builtin.debug:
+        var: logged_in_users_output.stdout_lines
