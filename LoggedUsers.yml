@@ -3,10 +3,12 @@
   gather_facts: false # No need for facts in this specific task
 
   tasks:
-    - name: Execute query user command
-      ansible.windows.win_shell: query user
-      register: logged_in_users_output
-
-    - name: Display logged-in users
+    - name: Get process information
+      ansible.windows.win_powershell:
+        script: |
+          query user
+      register: explorer_processes
+    
+    - name: Display captured output
       ansible.builtin.debug:
-        var: logged_in_users_output.stdout
+        msg: "{{ explorer_processes.output }}"
