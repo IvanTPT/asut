@@ -7,4 +7,4 @@
           - Definition Updates
         accept_list:
           - KB2267602
-        log_path: C:\software\update_install.log  # Log install process
+        log_path: C:\software\{{ ansible_date_time.month }}_{{ ansible_date_time.year }}_update_install.log  # Log install process
