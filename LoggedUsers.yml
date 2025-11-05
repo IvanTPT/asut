@@ -9,4 +9,4 @@
 
     - name: Display logged-in users
       ansible.builtin.debug:
-        var: logged_in_users_output.stdout_lines
+        var: logged_in_users_output.stdout
